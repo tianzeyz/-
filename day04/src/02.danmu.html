@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        /* 父元素相对定位 */
+        .container{
+            position: relative;
+            width:900px;
+            height: 500px;
+        }
+        /* 视频  绝对定位 */
+        #v3{
+            width: 900px;
+            height: 500px;
+            z-index: 0;
+            position: absolute;
+        }
+        /* 画布  绝对定位 */
+        #c3{
+            z-index: 1;
+            position: absolute;
+            left:0;
+            top:0;
+        }
+    </style>
+</head>
+<body>
+    <marquee><h2>弹幕</h2></marquee>
+    <!-- 最外层父元素 -->
+    <div class="container">
+        <!-- 画布 -->
+        <canvas id="c3" width="900" height="400"></canvas>
+        <!-- 视频 -->
+        <video id="v3" src="../res/11.MP4" autoplay loop controls></video>
+    </div>
+    <!-- 用户输入区域 -->
+    <div class="userDiv">
+        <!-- 输入框 -->
+        <input type="text" id="inputMsg" placeholder="自古弹幕出人才">
+        <!-- 文字大小下拉列表 -->
+        <select id="inputFont">
+            <option value="12px">小号</option>
+            <option value="22px">中号</option>
+            <option value="32px">大号</option>
+        </select>
+        <!-- 文字颜色下拉列表 -->
+        <select id="inputColor">
+            <option value="#f00">红色</option>
+            <option value="#00f">蓝色</option>
+            <option value="#fff">白色</option>
+        </select>
+        <!-- 发送按钮 -->
+        <input id="inputBtn" type="button" value="发送">
+    </div>
+    <script src="../js/msg.js"></script>
+    <script src="../js/main.js"></script>
+</body>
+</html>
